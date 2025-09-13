@@ -8,7 +8,7 @@ route.post("/add-user", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    const query = "INERT INTO users(name,email,password)VALUES(?,?,?)";
+    const query = "INSERT INTO users(name,email,password)VALUES(?,?,?)";
 
     db.query(query, [name, email, password], (err, result) => {
       if (err) {
